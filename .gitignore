@@ -1,0 +1,7 @@
+/gmall-api/target/
+/*.iml
+/.idea
+/gmall-user-service/.mvn/
+/gmall-api/
+/gmall-api/
+*/target

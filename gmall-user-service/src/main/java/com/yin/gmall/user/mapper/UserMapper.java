@@ -1,10 +1,8 @@
 package com.yin.gmall.user.mapper;
 
 import com.yin.gmall.bean.UmsMember;
-import org.apache.ibatis.annotations.Mapper;
+import tk.mybatis.mapper.common.Mapper;
 
-@Mapper
-public interface UserMapper extends tk.mybatis.mapper.common.Mapper<UmsMember> {
-    //List<UmsMember> selectAllUser();
+public interface UserMapper  extends Mapper<UmsMember> {
 
 }
