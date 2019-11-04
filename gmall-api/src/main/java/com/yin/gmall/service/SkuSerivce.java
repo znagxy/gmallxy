@@ -5,4 +5,6 @@ import com.yin.gmall.bean.PmsSkuInfo;
 public interface SkuSerivce {
 
     String saveSkuInfo(PmsSkuInfo pmsSkuInfo);
+
+    PmsSkuInfo getSkuById(String skuId);
 }
