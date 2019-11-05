@@ -8,12 +8,15 @@ import com.yin.gmall.bean.PmsSkuInfo;
 import com.yin.gmall.bean.PmsSkuSaleAttrValue;
 import com.yin.gmall.service.SkuSerivce;
 import com.yin.gmall.service.SpuService;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,9 +36,11 @@ public class ItemController {
         return "index";
     }
 
-    @RequestMapping("{skuId}")
-    public String item(@PathVariable String skuId , ModelMap map){
-        PmsSkuInfo pmsSkuInfo = skuSerivce.getSkuById(skuId);
+    @RequestMapping("{skuId}.html")
+    public String item(@PathVariable String skuId , ModelMap map , HttpServletRequest request){
+        String ip = request.getRemoteAddr();
+
+        PmsSkuInfo pmsSkuInfo = skuSerivce.getSkuById(skuId,ip);
         map.put("skuInfo",pmsSkuInfo);
 
         List<PmsProductSaleAttr> pmsProductSaleAttrs = spuService.spuSaleAttrListCheckBySku(pmsSkuInfo.getProductId() ,skuId);
