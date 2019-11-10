@@ -1,7 +1,11 @@
-/gmall-api/target/
-/*.iml
+*/target/
+*/*.iml
 /.idea
-/gmall-user-service/.mvn/
-/gmall-api/
-/gmall-api/
+*/.mvn/
 */target
+/gmall-manage-web/.mvn
+/gamll-*/.mvn
+/gmall-manage-service/gmall-manage-service.iml
+/gmall-parent/gmall-parent.iml
+
+/gmall-service-util/gmall-service-util.iml
