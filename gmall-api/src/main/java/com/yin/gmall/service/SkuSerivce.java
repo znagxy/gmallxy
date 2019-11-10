@@ -6,9 +6,11 @@ import java.util.List;
 
 public interface SkuSerivce {
 
-    String saveSkuInfo(PmsSkuInfo pmsSkuInfo);
+    void saveSkuInfo(PmsSkuInfo pmsSkuInfo);
 
-    PmsSkuInfo getSkuById(String skuId);
+    PmsSkuInfo getSkuById(String skuId,String ip);
 
     List<PmsSkuInfo> getSkuSaleAttrValueListBySpu(String productId);
+
+    List<PmsSkuInfo> getAllSku();
 }

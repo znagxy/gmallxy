@@ -33,9 +33,9 @@ public class ItemController {
         return "index";
     }
 
-    @RequestMapping("{skuId}")
+    @RequestMapping("{skuId}.html")
     public String item(@PathVariable String skuId , ModelMap map){
-        PmsSkuInfo pmsSkuInfo = skuSerivce.getSkuById(skuId);
+        PmsSkuInfo pmsSkuInfo = skuSerivce.getSkuById(skuId , "");
         map.put("skuInfo",pmsSkuInfo);
 
         List<PmsProductSaleAttr> pmsProductSaleAttrs = spuService.spuSaleAttrListCheckBySku(pmsSkuInfo.getProductId() ,skuId);
